@@ -265,9 +265,9 @@ open class PullUpController: UIViewController {
         heightConstraint = view.heightAnchor.constraint(equalToConstant: pullUpControllerPreferredSize.height)
         heightConstraint?.priority = .defaultLow
         if #available(iOS 11.0, *) {
-            bottomConstraint = parentView.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            bottomConstraint = parentView.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -17)
         } else {
-            bottomConstraint = parentView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            bottomConstraint = parentView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -17)
         }
         
         let constraintsToActivate = [topConstraint,
