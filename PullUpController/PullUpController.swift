@@ -265,9 +265,9 @@ open class PullUpController: UIViewController {
         heightConstraint = view.heightAnchor.constraint(equalToConstant: pullUpControllerPreferredSize.height)
         heightConstraint?.priority = .defaultLow
         if #available(iOS 11.0, *) {
-            bottomConstraint = parentView.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -17)
+            bottomConstraint = parentView.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         } else {
-            bottomConstraint = parentView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -17)
+            bottomConstraint = parentView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         }
         
         let constraintsToActivate = [topConstraint,
@@ -439,7 +439,7 @@ open class PullUpController: UIViewController {
         widthConstraint?.constant = pullUpControllerPreferredSize.width
         heightConstraint?.constant = pullUpControllerPreferredSize.height
         heightConstraint?.priority = .defaultLow
-        bottomConstraint?.constant = 0
+        bottomConstraint?.constant = 17
     }
     
     private func setLandscapeConstraints() {
